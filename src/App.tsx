@@ -12,7 +12,7 @@ import {
   MultiSelect, MultiSelectItem, Button
 } from "@tremor/react"
 
-import { SortAscendingIcon, SortDescendingIcon } from '@heroicons/react/solid'
+import { SortAscendingIcon, SortDescendingIcon, FolderIcon } from '@heroicons/react/solid'
 
 const App = () => {
   const [currentTab, setCurrentTab] = useState(2021)
@@ -159,7 +159,7 @@ const App = () => {
         <div className="mt-10">
           <Col>
             <div className="flex items-center space-x-4">
-              <MultiSelect className='w-1/4' placeholder="Select universities..." defaultValue={universitiesSelected} onValueChange={(universities) => {
+              <MultiSelect className='w-1/4' placeholder="Select Universities..." defaultValue={universitiesSelected} onValueChange={(universities) => {
                 setUniversitiesSelected(universities)
               }}>
                 <MultiSelectItem value="Nanyang Technological University">
@@ -248,9 +248,10 @@ const App = () => {
         <Col numColSpan={1}>
           <Card>
             <Metric>One Stop GES</Metric>
+
             <Text className='mt-4 w-1/2'>
               Contains information from <a className='text-blue-300' target="_blank" href="https://beta.data.gov.sg/datasets/415/view" rel='noopener noreferrer'>Graduate Employment Survey - NTU, NUS, SIT, SMU, SUSS & SUTD</a>, accessed on 2nd July 2023 from Ministry of Education (MOE), which is made available under the terms of the <a className='text-blue-300' target="_blank" href="https://beta.data.gov.sg/open-data-license" rel='noopener noreferrer'>Singapore Open Data Licence version 1.0</a>
-              </Text>
+            </Text>
             <TabGroup onIndexChange={handleTabChange}>
               <TabList className="mt-8 grid grid-cols-9 items-center">
                 {renderTabs(numYears)}
@@ -259,6 +260,12 @@ const App = () => {
                 {renderTabPanels(numYears)}
               </TabPanels>
             </TabGroup>
+            <div className="text-center align-center items-center">
+              <a href="https://google.com" target="_blank" rel='noopener noreferrer'>
+                <Button icon={FolderIcon} className='mr-8' variant='primary'>View the Repository
+                </Button>
+              </a>
+            </div>
           </Card>
         </Col>
       </Grid>
