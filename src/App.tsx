@@ -253,7 +253,7 @@ const App = () => {
               Contains information from <a className='text-blue-300' target="_blank" href="https://beta.data.gov.sg/datasets/415/view" rel='noopener noreferrer'>Graduate Employment Survey - NTU, NUS, SIT, SMU, SUSS & SUTD</a>, accessed on 2nd July 2023 from Ministry of Education (MOE), which is made available under the terms of the <a className='text-blue-300' target="_blank" href="https://beta.data.gov.sg/open-data-license" rel='noopener noreferrer'>Singapore Open Data Licence version 1.0</a>
             </Text>
             <TabGroup onIndexChange={handleTabChange}>
-              <TabList className="mt-8 grid grid-cols-9 items-center">
+              <TabList className="mt-8 grid grid-cols-10 items-center">
                 {renderTabs(numYears)}
               </TabList>
               <TabPanels>
