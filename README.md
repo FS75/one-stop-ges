@@ -2,7 +2,7 @@
 
 An all-encompassing dashboard providing comprehensive Graduate Employment Survey (GES) results from various universities in Singapore, accumulated over the years.
 
-<!-- ## Link: [One Stop GES]() -->
+Link to Dashboard: [One Stop GES](https://one-stop-ges.vercel.app/)
 
 ## Installation
 
