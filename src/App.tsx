@@ -15,7 +15,7 @@ import {
 import { SortAscendingIcon, SortDescendingIcon, FolderIcon } from '@heroicons/react/solid'
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState(2021)
+  const [currentTab, setCurrentTab] = useState(2022)
   const [gesData, setGesData] = useState<Array<any>>([])
   const [filteredGesData, setFilteredGesData] = useState<Array<any>>([])
   const [numYears, setNumYears] = useState(0)
