@@ -1,8 +1,10 @@
 # One Stop GES
 
-<!-- ## Link: [One Stop GES](https://juleus-portfolio.vercel.app/) -->
+An all-encompassing dashboard providing comprehensive Graduate Employment Survey (GES) results from various universities in Singapore, accumulated over the years.
 
-## Run Instructions
+<!-- ## Link: [One Stop GES]() -->
+
+## Installation
 
 1. Install all required dependencies
 ```
@@ -14,7 +16,7 @@ npm run
 ```
 
 ## Technologies Used
-[![React][React]][React-docs] [![tremor][tremor]][tremor-docs] [![framer-motion][framer-motion]][framer-motion-docs]
+[![React][React]][React-docs] [![tremor][tremor]][tremor-docs]
 
 [React]: https://img.shields.io/badge/-ReactJs-21262e?logo=react&logoColor=61dafc&style=for-the-badge
 [React-docs]: https://react.dev/
