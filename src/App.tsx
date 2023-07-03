@@ -166,7 +166,7 @@ const App = () => {
               />
               <Button className='mr-8' onClick={() => handleExport(filteredGesData)} tooltip='The exported CSV will follow the exact order in which the table is currently formatted'>Export Table as CSV</Button>
             </div>
-            <div className="flex flex-col h-screen mt-4">
+            <div className="flex flex-col h-screen mt-6">
               <div className="flex-grow overflow-auto">
                 <table className="relative w-full">
                   <thead>
@@ -188,17 +188,17 @@ const App = () => {
                     {
                       sortedData.filter(row => parseInt(row.year) === currentTab).map((row, j) => (
                         <tr key={j}  className="border-b border-gray-800">
-                          <td className='text-center py-6'><Text>{j + 1}</Text></td>
-                          <td className='text-center py-6'><Text>{mapToAcronym(row.university)}</Text></td>
-                          <td className='py-6' style={{maxWidth: '300px'}}><Text>{row.degree}</Text></td>
-                          <td className='text-center py-6'><Text>{row.employment_rate_overall}</Text></td>
-                          <td className='text-center py-6'><Text>{row.employment_rate_ft_perm}</Text></td>
-                          <td className='text-center py-6'><Text>{row.basic_monthly_mean}</Text></td>
-                          <td className='text-center py-6'><Text>{row.basic_monthly_median}</Text></td>
-                          <td className='text-center py-6'><Text>{row.gross_monthly_mean}</Text></td>
-                          <td className='text-center py-6'><Text>{row.gross_monthly_median}</Text></td>
-                          <td className='text-center py-6'><Text>{row.gross_mthly_25_percentile}</Text></td>
-                          <td className='text-center py-6'><Text>{row.gross_mthly_75_percentile}</Text></td>
+                          <td className='text-center py-4'><Text>{j + 1}</Text></td>
+                          <td className='text-center py-4'><Text>{mapToAcronym(row.university)}</Text></td>
+                          <td className='py-4' style={{maxWidth: '300px'}}><Text>{row.degree}</Text></td>
+                          <td className='text-center py-4'><Text>{row.employment_rate_overall}</Text></td>
+                          <td className='text-center py-4'><Text>{row.employment_rate_ft_perm}</Text></td>
+                          <td className='text-center py-4'><Text>{row.basic_monthly_mean}</Text></td>
+                          <td className='text-center py-4'><Text>{row.basic_monthly_median}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_monthly_mean}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_monthly_median}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_mthly_25_percentile}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_mthly_75_percentile}</Text></td>
                         </tr>
                       ))
                     }
