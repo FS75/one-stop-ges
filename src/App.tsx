@@ -14,6 +14,15 @@ import {
 import { SortAscendingIcon, SortDescendingIcon, FolderIcon } from '@heroicons/react/solid'
 
 const App = () => {
+  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.style.setProperty('--bg-color', isDarkMode ? '#111827' : '#ffffff'); // change the colors as per your need
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const newColor = e.matches ? '#000' : '#fff'; // change the colors as per your need
+    document.documentElement.style.setProperty('--bg-color', newColor);
+  });
+  
+
   const [currentTab, setCurrentTab] = useState(2022)
   const [gesData, setGesData] = useState<Array<any>>([])
   const [filteredGesData, setFilteredGesData] = useState<Array<any>>([])
@@ -170,34 +179,34 @@ const App = () => {
                 <table className="relative w-full">
                   <thead>
                     <tr>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center"><Text>No.</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('university')}><Text>University {(sortField === 'university' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('degree')}><Text>Degree {(sortField === 'degree' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('employment_rate_overall')}><Text>Overall ER (%) {(sortField === 'employment_rate_overall' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('employment_rate_ft_perm')}><Text>FT Perm. ER (%) {(sortField === 'employment_rate_ft_perm' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('basic_monthly_mean')}><Text>BMS - Mean (S$) {(sortField === 'basic_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('basic_monthly_median')}><Text>BMS - Median (S$) {(sortField === 'basic_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_monthly_mean')}><Text>GMS - Mean (S$) {(sortField === 'gross_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_monthly_median')}><Text>GMS - Median (S$) {(sortField === 'gross_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_mthly_25_percentile')}><Text>GMS - 25th Pct. (S$) {(sortField === 'gross_mthly_25_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_mthly_75_percentile')}><Text>GMS - 75th Pct. (S$) {(sortField === 'gross_mthly_75_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center"><Text>No.</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('university')}><Text>University {(sortField === 'university' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none" onClick={() => onSort('degree')}><Text>Degree {(sortField === 'degree' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('employment_rate_overall')}><Text>Overall ER (%) {(sortField === 'employment_rate_overall' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('employment_rate_ft_perm')}><Text>FT Perm. ER (%) {(sortField === 'employment_rate_ft_perm' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('basic_monthly_mean')}><Text>BMS - Mean (S$) {(sortField === 'basic_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('basic_monthly_median')}><Text>BMS - Median (S$) {(sortField === 'basic_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('gross_monthly_mean')}><Text>GMS - Mean (S$) {(sortField === 'gross_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('gross_monthly_median')}><Text>GMS - Median (S$) {(sortField === 'gross_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('gross_mthly_25_percentile')}><Text>GMS - 25th Pct. (S$) {(sortField === 'gross_mthly_25_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 cursor-pointer select-none text-center" onClick={() => onSort('gross_mthly_75_percentile')}><Text>GMS - 75th Pct. (S$) {(sortField === 'gross_mthly_75_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
                     </tr>
                   </thead>
                   <tbody>
                     {
                       sortedData.filter(row => parseInt(row.year) === currentTab).map((row, j) => (
                         <tr key={j}  className="border-b border-gray-800">
-                          <td className='text-center bg-custom py-4'><Text>{j + 1}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{mapToAcronym(row.university)}</Text></td>
-                          <td className='bg-custom py-4' style={{maxWidth: '300px'}}><Text>{row.degree}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.employment_rate_overall}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.employment_rate_ft_perm}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.basic_monthly_mean}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.basic_monthly_median}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.gross_monthly_mean}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.gross_monthly_median}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.gross_mthly_25_percentile}</Text></td>
-                          <td className='text-center bg-custom py-4'><Text>{row.gross_mthly_75_percentile}</Text></td>
+                          <td className='text-center py-4'><Text>{j + 1}</Text></td>
+                          <td className='text-center py-4'><Text>{mapToAcronym(row.university)}</Text></td>
+                          <td className='py-4' style={{maxWidth: '300px'}}><Text>{row.degree}</Text></td>
+                          <td className='text-center py-4'><Text>{row.employment_rate_overall}</Text></td>
+                          <td className='text-center py-4'><Text>{row.employment_rate_ft_perm}</Text></td>
+                          <td className='text-center py-4'><Text>{row.basic_monthly_mean}</Text></td>
+                          <td className='text-center py-4'><Text>{row.basic_monthly_median}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_monthly_mean}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_monthly_median}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_mthly_25_percentile}</Text></td>
+                          <td className='text-center py-4'><Text>{row.gross_mthly_75_percentile}</Text></td>
                         </tr>
                       ))
                     }

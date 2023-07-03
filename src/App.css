@@ -26,3 +26,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+th {
+  background-color: var(--bg-color);
+}
