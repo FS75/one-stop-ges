@@ -310,7 +310,7 @@ const App = () => {
             </TabGroup>
 
             <div className="text-center align-center items-center mt-4">
-              <a href="https://google.com" target="_blank" rel='noopener noreferrer'>
+              <a href="https://github.com/FS75/one-stop-ges" target="_blank" rel='noopener noreferrer'>
                 <Button icon={FolderIcon} className='mr-8' variant='primary'>View the Repository</Button>
               </a>
             </div>
