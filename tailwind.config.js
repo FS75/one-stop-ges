@@ -9,6 +9,7 @@ module.exports = {
     current: "currentColor",
     extend: {
       colors: {
+        'custom': '#111827',
         // light mode
         tremor: {
           brand: {
