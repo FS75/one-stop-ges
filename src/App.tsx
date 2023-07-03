@@ -8,7 +8,6 @@ import {
   TabGroup, TabList, Tab, TabPanels, TabPanel,
   Card, Legend, Metric, Text,
   Grid, Col,
-  Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell,
   MultiSelect, MultiSelectItem, Button
 } from "@tremor/react"
 
@@ -167,21 +166,21 @@ const App = () => {
               <Button className='mr-8' onClick={() => handleExport(filteredGesData)} tooltip='The exported CSV will follow the exact order in which the table is currently formatted'>Export Table as CSV</Button>
             </div>
             <div className="flex flex-col h-screen mt-6">
-              <div className="flex-grow overflow-auto">
+              <div className="flex-grow overflow-auto table-container">
                 <table className="relative w-full">
                   <thead>
                     <tr>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none px-2"><Text>No.</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none px-2" onClick={() => onSort('university')}><Text>University {(sortField === 'university' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center"><Text>No.</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('university')}><Text>University {(sortField === 'university' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
                       <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('degree')}><Text>Degree {(sortField === 'degree' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('employment_rate_overall')}><Text>Overall ER (%) {(sortField === 'employment_rate_overall' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('employment_rate_ft_perm')}><Text>FT Perm. ER (%) {(sortField === 'employment_rate_ft_perm' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('basic_monthly_mean')}><Text>BMS - Mean (S$) {(sortField === 'basic_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('basic_monthly_median')}><Text>BMS - Median (S$) {(sortField === 'basic_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('gross_monthly_mean')}><Text>GMS - Mean (S$) {(sortField === 'gross_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('gross_monthly_median')}><Text>GMS - Median (S$) {(sortField === 'gross_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('gross_mthly_25_percentile')}><Text>GMS - 25th Pct. (S$) {(sortField === 'gross_mthly_25_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
-                      <th className="sticky top-0 bg-custom cursor-pointer select-none" onClick={() => onSort('gross_mthly_75_percentile')}><Text>GMS - 75th Pct. (S$) {(sortField === 'gross_mthly_75_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('employment_rate_overall')}><Text>Overall ER (%) {(sortField === 'employment_rate_overall' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('employment_rate_ft_perm')}><Text>FT Perm. ER (%) {(sortField === 'employment_rate_ft_perm' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('basic_monthly_mean')}><Text>BMS - Mean (S$) {(sortField === 'basic_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('basic_monthly_median')}><Text>BMS - Median (S$) {(sortField === 'basic_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_monthly_mean')}><Text>GMS - Mean (S$) {(sortField === 'gross_monthly_mean' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_monthly_median')}><Text>GMS - Median (S$) {(sortField === 'gross_monthly_median' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_mthly_25_percentile')}><Text>GMS - 25th Pct. (S$) {(sortField === 'gross_mthly_25_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
+                      <th className="sticky top-0 bg-custom cursor-pointer select-none text-center" onClick={() => onSort('gross_mthly_75_percentile')}><Text>GMS - 75th Pct. (S$) {(sortField === 'gross_mthly_75_percentile' && sortDirection === 'desc') ? <SortAscendingIcon className="w-4 h-4 inline" /> : <SortDescendingIcon className="w-4 h-4 inline" />}</Text></th>
                     </tr>
                   </thead>
                   <tbody>
