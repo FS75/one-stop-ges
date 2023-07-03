@@ -166,7 +166,7 @@ const App = () => {
               <Button className='mr-8' onClick={() => handleExport(filteredGesData)} tooltip='The exported CSV will follow the exact order in which the table is currently formatted'>Export Table as CSV</Button>
             </div>
             <div className="flex flex-col h-screen mt-6">
-              <div className="flex-grow overflow-auto table-container">
+              <div className="flex-grow overflow-auto">
                 <table className="relative w-full">
                   <thead>
                     <tr>
